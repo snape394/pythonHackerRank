@@ -1,0 +1,11 @@
+from statistics import median
+n=int(input())
+l1=list(map(int,input().split()))
+l2=list(map(int,input().split()))
+l3=[]
+for i in range(n):
+    l3=l3+[(l1[i])]*l2[i]
+
+n=len(l3)
+l3=sorted(l3)
+print(float(median(l3[(n+1)//2:])-median(l3[:n//2])))
