@@ -1,0 +1,26 @@
+n = int(input())
+x = sorted(list(map(int, input().split())))
+from statistics import median
+print(int(median(x[:n//2])))
+print(int(median(x)))
+print(int(median(x[(n+1)//2:])))
+
+
+
+#####MYSOl#####
+
+def med(ar,l):
+    if(l%2!=0):
+        return ar[l//2]
+    else:
+        return (ar[l//2-1]+ar[l//2])//2
+
+n=int(input())
+arr=list(map(int,input().split()))
+arr=sorted(arr)
+print(med(arr[0:n//2+1],n//2))
+print(med(arr,n))
+if(n%2!=0):
+    print(med(arr[n//2+1:n],n//2))
+else:
+    print(med(arr[n//2:n],n//2))
